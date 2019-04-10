@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>学生信息列表</title>
+</head>
+<body>
+<h1 style="text-align: center;color: red;">学生信息列表</h1>
+<hr>
+<div>
+    <a href="/student/add">添加</a><br/>
+</div>
+<table align="center" border="1" width="80%">
+    <tr>
+        <th>用户编号</th>
+        <th>登陆账号</th>
+        <th>登陆密码</th>
+        <th>用户名称</th>
+        <th>移动电话</th>
+        <th>邮件地址</th>
+        <th>用户性别</th>
+        <th>创建用户</th>
+        <th>修改用户</th>
+        <th>创建时间</th>
+        <th>修改时间</th>
+        <th>用户状态</th>
+    </tr>
+    <tr th:each="s:${students}">
+        <td th:text="${s.Id}"></td>
+        <td th:text="${s.LoginId}"></td>
+        <td th:text="${s.Password}"></td>
+        <td th:text="${s.Name}"></td>
+        <td th:text="${s.Mobile}"></td>
+        <td th:text="${s.Email}"></td>
+        <td th:text="${s.Sex}"></td>
+        <td th:text="${s.CreateUserId}"></td>
+        <td th:text="${s.ModifyUserId}"></td>
+        <td th:text="${s.CreateTime}"></td>
+        <td th:text="${s.ModifyTime}"></td>
+        <td th:text="${s.Status}"></td>
+    </tr>
+</table>
+<hr>
+<form action="find" method="get">
+    <h3 style="text-align: center;color: red;">查询学生信息</h3>
+    <table align="center" border="1" width="40%">
+        <tr>
+            <td> 请输入ID:<input type="text" name="Name"></input> <input type="submit" value="查询"></input></td>
+        </tr>
+    </table>
+
+</form>
+<table align="center" border="1" width="80%">
+    <tr>
+        <th>用户编号</th>
+        <th>登陆账号</th>
+        <th>登陆密码</th>
+        <th>用户名称</th>
+        <th>移动电话</th>
+        <th>邮件地址</th>
+        <th>用户性别</th>
+        <th>创建用户</th>
+        <th>修改用户</th>
+        <th>创建时间</th>
+        <th>修改时间</th>
+        <th>用户状态</th>
+    </tr>
+    <tr th:each="c:${somebody}">
+        <td th:text="${c.Id}"></td>
+        <td th:text="${c.LoginId}"></td>
+        <td th:text="${c.Password}"></td>
+        <td th:text="${c.Name}"></td>
+        <td th:text="${s.Mobile}"></td>
+        <td th:text="${c.Email}"></td>
+        <td th:text="${c.Sex}"></td>
+        <td th:text="${c.CreateUserId}"></td>
+        <td th:text="${c.ModifyUserId}"></td>
+        <td th:text="${c.CreateTime}"></td>
+        <td th:text="${c.ModifyTime}"></td>
+        <td th:text="${c.Status}"></td>
+    </tr>
+</table>
+<hr>
+<form action="deleteStudent" method="post">
+    <h3 style="text-align: center;color: red;">删除学生信息</h3>
+    <table align="center" border="1" width="40%">
+        <tr>
+            <td>所要删除的ID:<input type="text" name = "Name"></input> <input type="submit" value="删除"></input></td>
+        </tr>
+    </table>
+
+</form>
+<hr>
+<form action="updateStudent" method="post">
+    <h3 style="text-align: center;color: red;">修改学生信息</h3>
+    <h5 style="text-align: center;color: red;">(注:根据用户名称进行更改)</h5>
+    <table align="center" border="1" width="40%">
+        <tr>
+            <td>用户名称</td>
+            <td><input type="text" name="Name"></td>
+        </tr>
+        <tr>
+            <td>登陆账号</td>
+            <td><input type="text" name="LoginId"></td>
+        </tr>
+        <tr>
+            <td>登陆密码</td>
+            <td><input type="password" name="Password"></td>
+        </tr>
+        <tr>
+            <td>移动电话</td>
+            <td><input type="text" name="Mobile"></td>
+        </tr>
+        <tr>
+            <td>邮件地址</td>
+            <td><input type="text" name="Email"></td>
+        </tr>
+        <tr>
+            <td>用户性别</td>
+            <td><input type="text" name="Sex"></td>
+        </tr>
+        <tr>
+            <td colspan="2" align="right"><input type="submit" value="更改"></td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>

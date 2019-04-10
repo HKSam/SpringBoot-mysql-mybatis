@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>添加学生信息</title>
+</head>
+<body>
+<h1 style="text-align: center;color: red;">添加学生信息</h1>
+<hr>
+<form action="/student/add" method="post">
+    <table align="center" border="1" width="80%">
+        <tr>
+            <td>登陆账号</td>
+            <td><input type="text" name="LoginId"></td>
+        </tr>
+        <tr>
+            <td>登陆密码</td>
+            <td><input type="password" name="Password"></td>
+        </tr>
+        <tr>
+            <td>用户名称</td>
+            <td><input type="text" name="Name"></td>
+        </tr>
+        <tr>
+            <td>移动电话</td>
+            <td><input type="text" name="Mobile"></td>
+        </tr>
+        <tr>
+            <td>邮件地址</td>
+            <td><input type="text" name="Email"></td>
+        </tr>
+        <tr>
+            <td>用户性别</td>
+            <td><input type="text" name="Sex"></td>
+        </tr>
+        <tr>
+            <td colspan="2" align="right"><input type="submit" value="保存"></td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>
