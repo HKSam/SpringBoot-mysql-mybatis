@@ -2,6 +2,7 @@ package com.sms.service;
 
 import com.sms.dao.StudentInfoDao;
 import com.sms.model.StudentInfo;
+import com.sms.model.UserInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.net.InetAddress;
@@ -41,6 +42,7 @@ public class StudentInfoService {
     public List<StudentInfo> findstudent(String Name){
         return  this.dao.findStudentByName(Name);
     }
+
 
 
 }

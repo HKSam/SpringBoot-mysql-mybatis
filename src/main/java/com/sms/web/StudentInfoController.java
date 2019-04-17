@@ -7,9 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.ModelAndView;
 
-import javax.servlet.http.HttpServletRequest;
 import java.net.UnknownHostException;
 import java.util.List;
 
@@ -20,6 +18,7 @@ public class StudentInfoController {
     @Autowired
     private StudentInfoService service;
     private StudentInfoDao dao;
+
 
     @RequestMapping(value = "/list",method = RequestMethod.GET)
     public String list(Model model){
@@ -60,9 +59,10 @@ public class StudentInfoController {
     @RequestMapping(value = "/find",method = RequestMethod.GET)
     public String findByName(String Name,Model model){
         List<StudentInfo> user=this.service.findstudent(Name);
-        model.addAttribute("user",user);
-        return "student/find";
+        model.addAttribute("users",user);
+        return "student/list";
     }
+
 
 
 }

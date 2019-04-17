@@ -65,12 +65,12 @@
         <th>修改时间</th>
         <th>用户状态</th>
     </tr>
-    <tr th:each="c:${somebody}">
+    <tr th:each="c:${users}">
         <td th:text="${c.Id}"></td>
         <td th:text="${c.LoginId}"></td>
         <td th:text="${c.Password}"></td>
         <td th:text="${c.Name}"></td>
-        <td th:text="${s.Mobile}"></td>
+        <td th:text="${c.Mobile}"></td>
         <td th:text="${c.Email}"></td>
         <td th:text="${c.Sex}"></td>
         <td th:text="${c.CreateUserId}"></td>

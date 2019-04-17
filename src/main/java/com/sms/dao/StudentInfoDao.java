@@ -1,6 +1,7 @@
 package com.sms.dao;
 
 import com.sms.model.StudentInfo;
+import com.sms.model.UserInfo;
 import org.apache.ibatis.annotations.*;
 import org.springframework.stereotype.Component;
 
@@ -24,4 +25,6 @@ public interface StudentInfoDao {
 
     @Select("select * from StudentInfo where Name=#{Name}")
     public List<StudentInfo> findStudentByName(@Param("Name") String Name);
+
+
 }
